@@ -74,6 +74,7 @@ func main() {
 	var creds *credentials.Value
 	var err error
 	if roleArnRe.MatchString(role) {
+		fmt.Fprintf(os.Stdout, "Assume role %s", role)
 		creds, err = assumeRole(role, "", *duration)
 	} else if _, err = os.Stat(configFilePath); err == nil {
 		fmt.Fprintf(os.Stderr, "WARNING: using deprecated role file (%s), switch to config file"+
