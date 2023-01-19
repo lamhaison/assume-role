@@ -95,6 +95,8 @@ func main() {
 
 		creds, err = assumeRole(roleConfig.Role, roleConfig.MFA, *duration)
 	} else {
+
+		fmt.Fprintf(os.Stdout, "99: Assume role %s \n", role)
 		creds, err = assumeProfile(role)
 	}
 
