@@ -242,8 +242,11 @@ func readTokenCode() (string, error) {
 	fmt.Fprintf(os.Stderr, "MFA code: ")
 
 	text, err := r.ReadString('\n')
-
 	fmt.Fprintf(os.Stdout, "244: Text %s eror %s \n", text, err)
+
+	text, err := r.ReadString('\n')
+	fmt.Fprintf(os.Stdout, "244: Text %s eror %s \n", text, err)
+
 	if err != nil {
 		return "", err
 	}
