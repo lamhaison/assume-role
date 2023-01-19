@@ -243,16 +243,19 @@ func readTokenCode() (string, error) {
 
 	text, _, err := r.ReadRune('\n')
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
-
+	fmt.Printf("Unicode char: %U\n", text)
 
 	fmt.Fprintf(os.Stderr, "248 MFA code: ")
 	text, _, err = r.ReadRune('\n')
 	fmt.Fprintf(os.Stdout, "50: Text %s and error %s \n", text, err)
+	fmt.Printf("Unicode char: %U\n", text)
 
 	if err != nil {
 		return "", err
 	}
-	return strings.TrimSpace(text), nil
+
+	fmt.Printf("Unicode char: %U\n", text)
+	// return strings.TrimSpace(text), nil
 }
 
 // loadConfig loads the ~/.aws/roles file.
