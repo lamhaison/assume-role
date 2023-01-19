@@ -241,23 +241,18 @@ func readTokenCode() (string, error) {
 	r := bufio.NewReader(os.Stdin)
 	fmt.Fprintf(os.Stderr, "242 MFA code: ")
 
-	text, _, err := r.ReadRune()
+	text, err := r.ReadString('\n')
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
-	fmt.Printf("Unicode char: %U\n", text)
+
 
 	fmt.Fprintf(os.Stderr, "248 MFA code: ")
-	text, _, err = r.ReadRune()
-	fmt.Fprintf(os.Stdout, "50: Text %s and error %s \n", text, err)
-	fmt.Printf("Unicode char: %U\n", text)
+	text, err = r.ReadString('\n')
+	fmt.Fprintf(os.Stdout, "250: Text %s and error %s \n", text, err)
 
 	if err != nil {
 		return "", err
 	}
-
-	fmt.Printf("Unicode char: %U\n", text)
-	
-	return "123456", nil
-	// return strings.TrimSpace(text), nil
+	return strings.TrimSpace(text), nil
 }
 
 // loadConfig loads the ~/.aws/roles file.
