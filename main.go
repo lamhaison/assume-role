@@ -239,13 +239,15 @@ func readTokenCode() (string, error) {
 	fmt.Fprintf(os.Stdout, "239: readTokenCode\n")
 
 	r := bufio.NewReader(os.Stdin)
-	fmt.Fprintf(os.Stderr, "MFA code: ")
+	fmt.Fprintf(os.Stderr, "242 MFA code: ")
 
 	text, err := r.ReadString('\n')
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
 
+
+	fmt.Fprintf(os.Stderr, "248 MFA code: ")
 	text, err = r.ReadString('\n')
-	fmt.Fprintf(os.Stdout, "248: Text %s and error %s \n", text, err)
+	fmt.Fprintf(os.Stdout, "50: Text %s and error %s \n", text, err)
 
 	if err != nil {
 		return "", err
