@@ -244,7 +244,7 @@ func readTokenCode() (string, error) {
 	text, err := r.ReadString('\n')
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
 
-	text, err := r.ReadString('\n')
+	text, err = r.ReadString('\n')
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
 
 	if err != nil {
