@@ -69,7 +69,7 @@ func main() {
 
 	role := argv[0]
 
-	fmt.Fprintf(os.Stdout, "Start the assume role %s", role)
+	fmt.Fprintf(os.Stdout, "Start the assume role %s \n", role)
 
 	args := argv[1:]
 
@@ -77,9 +77,11 @@ func main() {
 	var creds *credentials.Value
 	var err error
 	if roleArnRe.MatchString(role) {
-		fmt.Fprintf(os.Stdout, "Assume role %s", role)
 		creds, err = assumeRole(role, "", *duration)
 	} else if _, err = os.Stat(configFilePath); err == nil {
+
+		fmt.Fprintf(os.Stdout, "83: Assume role %s \n", role)
+
 		fmt.Fprintf(os.Stderr, "WARNING: using deprecated role file (%s), switch to config file"+
 			" (https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html)\n",
 			configFilePath)
