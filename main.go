@@ -53,6 +53,8 @@ func defaultFormat() string {
 }
 
 func main() {
+
+	fmt.Fprintf("Start the assume role")
 	var (
 		duration = flag.Duration("duration", time.Hour, "The duration that the credentials will be valid for.")
 		format   = flag.String("format", defaultFormat(), "Format can be 'bash' or 'powershell'.")
