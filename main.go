@@ -241,12 +241,12 @@ func readTokenCode() (string, error) {
 	r := bufio.NewReader(os.Stdin)
 	fmt.Fprintf(os.Stderr, "242 MFA code: ")
 
-	text, _, err := r.ReadRune('')
+	text, _, err := r.ReadRune()
 	fmt.Fprintf(os.Stdout, "244: Text %s and error %s \n", text, err)
 	fmt.Printf("Unicode char: %U\n", text)
 
 	fmt.Fprintf(os.Stderr, "248 MFA code: ")
-	text, _, err = r.ReadRune('')
+	text, _, err = r.ReadRune()
 	fmt.Fprintf(os.Stdout, "50: Text %s and error %s \n", text, err)
 	fmt.Printf("Unicode char: %U\n", text)
 
