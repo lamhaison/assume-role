@@ -251,7 +251,7 @@ func must(err error) {
 			os.Exit(1)
 		}
 
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		fmt.Fprintf(os.Stderr, "error LHS: %v\n", err)
 		os.Exit(1)
 	}
 }
