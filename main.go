@@ -98,6 +98,8 @@ func main() {
 
 		fmt.Fprintf(os.Stdout, "99: Assume role %s \n", role)
 		creds, err = assumeProfile(role)
+
+		fmt.Fprintf(os.Stdout, "102:  creds %s and error %s \n", creds, err)
 	}
 
 	must(err)
