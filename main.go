@@ -236,11 +236,14 @@ type config map[string]roleConfig
 // readTokenCode reads the MFA token from Stdin.
 func readTokenCode() (string, error) {
 
-	fmt.Fprintf(os.Stdout, "239: readTokenCode")
-	
+	fmt.Fprintf(os.Stdout, "239: readTokenCode\n")
+
 	r := bufio.NewReader(os.Stdin)
 	fmt.Fprintf(os.Stderr, "MFA code: ")
+
 	text, err := r.ReadString('\n')
+
+	fmt.Fprintf(os.Stdout, "244: Text %s eror %s \n", text, err)
 	if err != nil {
 		return "", err
 	}
