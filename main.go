@@ -53,7 +53,7 @@ func defaultFormat() string {
 }
 
 func main() {
-	fmt.Fprintf(os.Stdout, "Start the assume role")
+	
 	var (
 		duration = flag.Duration("duration", time.Hour, "The duration that the credentials will be valid for.")
 		format   = flag.String("format", defaultFormat(), "Format can be 'bash' or 'powershell'.")
@@ -68,6 +68,9 @@ func main() {
 	stscreds.DefaultDuration = *duration
 
 	role := argv[0]
+
+	fmt.Fprintf(os.Stdout, "Start the assume role %s", role)
+
 	args := argv[1:]
 
 	// Load credentials from configFilePath if it exists, else use regular AWS config
