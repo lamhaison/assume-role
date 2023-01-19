@@ -241,8 +241,6 @@ func readTokenCode() (string, error) {
 	r := bufio.NewReader(os.Stdin)
 	fmt.Fprintf(os.Stderr, "MFA code: ")
 
-	
-
 	text, err := r.ReadString('\n')
 	if err != nil {
 		return "", err
